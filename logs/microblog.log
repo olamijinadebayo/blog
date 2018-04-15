@@ -78,3 +78,4 @@ Traceback (most recent call last):
 sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) no such table: followers [SQL: 'SELECT count(*) AS count_1 \nFROM (SELECT user.id AS user_id, user.username AS user_username, user.email AS user_email, user.password_hash AS user_password_hash, user.about_me AS user_about_me, user.last_seen AS user_last_seen \nFROM user, followers \nWHERE followers.followed_id = ? AND followers.follower_id = user.id) AS anon_1'] [parameters: (2,)] (Background on this error at: http://sqlalche.me/e/e3q8)
 2018-04-15 18:53:06,516 INFO: Microblog startup [in /home/ola/Documents/moringa-school-projects/microblog/app/__init__.py:46]
 2018-04-15 18:53:13,511 INFO: Microblog startup [in /home/ola/Documents/moringa-school-projects/microblog/app/__init__.py:46]
+2018-04-15 21:51:25,242 INFO: Microblog startup [in /home/ola/Documents/moringa-school-projects/microblog/app/__init__.py:46]
