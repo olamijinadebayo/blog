@@ -1,9 +1,9 @@
 {% extends 'bootstrap/base.html' %}
   {% block title %}
     {% if title %}
-    <title>{{title}} - Microblog</title>
+      {{title}} - Microblog
     {% else %}
-    <title>Welcome to Microblog</title>
+      Welcome to Microblog
     {% endif %}
   {% endblock %}
 
@@ -51,4 +51,9 @@
       {# application content needs to be provided in the app_content block #}
       {% block app_content %}{% endblock %}
   </div>
+{% endblock %}
+
+{% block scripts %}
+  {{ super()}}
+  {{ moment.include_moment() }}
 {% endblock %}

@@ -93,3 +93,6 @@ sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) no such table: follo
 2018-04-19 12:29:33,374 INFO: Microblog startup [in /home/ola/Documents/moringa-school-projects/microblog/app/__init__.py:49]
 2018-04-19 12:31:05,163 INFO: Microblog startup [in /home/ola/Documents/moringa-school-projects/microblog/app/__init__.py:49]
 2018-04-19 12:53:05,122 INFO: Microblog startup [in /home/ola/Documents/moringa-school-projects/microblog/app/__init__.py:49]
+2018-04-19 13:00:52,175 INFO: Microblog startup [in /home/ola/Documents/moringa-school-projects/microblog/app/__init__.py:49]
+2018-04-19 14:53:59,941 INFO: Microblog startup [in /home/ola/Documents/moringa-school-projects/microblog/app/__init__.py:49]
+2018-04-19 16:11:30,459 INFO: Microblog startup [in /home/ola/Documents/moringa-school-projects/microblog/app/__init__.py:51]
