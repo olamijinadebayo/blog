@@ -1,13 +1,4 @@
-2018-04-15 18:47:18,679 ERROR: Exception on /user/ola [GET] [in /home/ola/Documents/moringa-school-projects/microblog/venv/lib/python3.6/site-packages/flask/app.py:1560]
-Traceback (most recent call last):
-  File "/home/ola/Documents/moringa-school-projects/microblog/venv/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 1193, in _execute_context
-    context)
-  File "/home/ola/Documents/moringa-school-projects/microblog/venv/lib/python3.6/site-packages/sqlalchemy/engine/default.py", line 507, in do_execute
-    cursor.execute(statement, parameters)
-sqlite3.OperationalError: no such table: followers
-
-The above exception was the direct cause of the following exception:
-
+2018-04-20 16:46:14,091 ERROR: Exception on / [GET] [in /home/ola/Documents/moringa-school-projects/microblog/venv/lib/python3.6/site-packages/flask/app.py:1560]
 Traceback (most recent call last):
   File "/home/ola/Documents/moringa-school-projects/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1982, in wsgi_app
     response = self.full_dispatch_request()
@@ -23,76 +14,48 @@ Traceback (most recent call last):
     return self.view_functions[rule.endpoint](**req.view_args)
   File "/home/ola/Documents/moringa-school-projects/microblog/venv/lib/python3.6/site-packages/flask_login/utils.py", line 261, in decorated_view
     return func(*args, **kwargs)
-  File "/home/ola/Documents/moringa-school-projects/microblog/app/routes.py", line 76, in user
-    return render_template('user.html',user=user,posts=posts)
-  File "/home/ola/Documents/moringa-school-projects/microblog/venv/lib/python3.6/site-packages/flask/templating.py", line 134, in render_template
-    context, ctx.app)
-  File "/home/ola/Documents/moringa-school-projects/microblog/venv/lib/python3.6/site-packages/flask/templating.py", line 116, in _render
-    rv = template.render(context)
-  File "/home/ola/Documents/moringa-school-projects/microblog/venv/lib/python3.6/site-packages/jinja2/asyncsupport.py", line 76, in render
-    return original_render(self, *args, **kwargs)
-  File "/home/ola/Documents/moringa-school-projects/microblog/venv/lib/python3.6/site-packages/jinja2/environment.py", line 1008, in render
-    return self.environment.handle_exception(exc_info, True)
-  File "/home/ola/Documents/moringa-school-projects/microblog/venv/lib/python3.6/site-packages/jinja2/environment.py", line 780, in handle_exception
-    reraise(exc_type, exc_value, tb)
-  File "/home/ola/Documents/moringa-school-projects/microblog/venv/lib/python3.6/site-packages/jinja2/_compat.py", line 37, in reraise
-    raise value.with_traceback(tb)
-  File "/home/ola/Documents/moringa-school-projects/microblog/app/templates/user.html", line 1, in top-level template code
-    {% extends "base.html"%}
-  File "/home/ola/Documents/moringa-school-projects/microblog/app/templates/base.html", line 32, in top-level template code
-    {% block content %} {% endblock %}
-  File "/home/ola/Documents/moringa-school-projects/microblog/app/templates/user.html", line 11, in block "content"
-    <p>{{ user.followers.count() }} followers, {{ user.followed.count() }} following.</p>
-  File "/home/ola/Documents/moringa-school-projects/microblog/venv/lib/python3.6/site-packages/sqlalchemy/orm/dynamic.py", line 265, in count
-    return self._clone(sess).count()
-  File "/home/ola/Documents/moringa-school-projects/microblog/venv/lib/python3.6/site-packages/sqlalchemy/orm/query.py", line 3124, in count
-    return self.from_self(col).scalar()
-  File "/home/ola/Documents/moringa-school-projects/microblog/venv/lib/python3.6/site-packages/sqlalchemy/orm/query.py", line 2877, in scalar
-    ret = self.one()
-  File "/home/ola/Documents/moringa-school-projects/microblog/venv/lib/python3.6/site-packages/sqlalchemy/orm/query.py", line 2848, in one
-    ret = self.one_or_none()
-  File "/home/ola/Documents/moringa-school-projects/microblog/venv/lib/python3.6/site-packages/sqlalchemy/orm/query.py", line 2818, in one_or_none
-    ret = list(self)
-  File "/home/ola/Documents/moringa-school-projects/microblog/venv/lib/python3.6/site-packages/sqlalchemy/orm/query.py", line 2889, in __iter__
-    return self._execute_and_instances(context)
-  File "/home/ola/Documents/moringa-school-projects/microblog/venv/lib/python3.6/site-packages/sqlalchemy/orm/query.py", line 2912, in _execute_and_instances
-    result = conn.execute(querycontext.statement, self._params)
-  File "/home/ola/Documents/moringa-school-projects/microblog/venv/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 948, in execute
-    return meth(self, multiparams, params)
-  File "/home/ola/Documents/moringa-school-projects/microblog/venv/lib/python3.6/site-packages/sqlalchemy/sql/elements.py", line 269, in _execute_on_connection
-    return connection._execute_clauseelement(self, multiparams, params)
-  File "/home/ola/Documents/moringa-school-projects/microblog/venv/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 1060, in _execute_clauseelement
-    compiled_sql, distilled_params
-  File "/home/ola/Documents/moringa-school-projects/microblog/venv/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 1200, in _execute_context
-    context)
-  File "/home/ola/Documents/moringa-school-projects/microblog/venv/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 1413, in _handle_dbapi_exception
-    exc_info
-  File "/home/ola/Documents/moringa-school-projects/microblog/venv/lib/python3.6/site-packages/sqlalchemy/util/compat.py", line 203, in raise_from_cause
-    reraise(type(exception), exception, tb=exc_tb, cause=cause)
-  File "/home/ola/Documents/moringa-school-projects/microblog/venv/lib/python3.6/site-packages/sqlalchemy/util/compat.py", line 186, in reraise
-    raise value.with_traceback(tb)
-  File "/home/ola/Documents/moringa-school-projects/microblog/venv/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 1193, in _execute_context
-    context)
-  File "/home/ola/Documents/moringa-school-projects/microblog/venv/lib/python3.6/site-packages/sqlalchemy/engine/default.py", line 507, in do_execute
-    cursor.execute(statement, parameters)
-sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) no such table: followers [SQL: 'SELECT count(*) AS count_1 \nFROM (SELECT user.id AS user_id, user.username AS user_username, user.email AS user_email, user.password_hash AS user_password_hash, user.about_me AS user_about_me, user.last_seen AS user_last_seen \nFROM user, followers \nWHERE followers.followed_id = ? AND followers.follower_id = user.id) AS anon_1'] [parameters: (2,)] (Background on this error at: http://sqlalche.me/e/e3q8)
-2018-04-15 18:53:06,516 INFO: Microblog startup [in /home/ola/Documents/moringa-school-projects/microblog/app/__init__.py:46]
-2018-04-15 18:53:13,511 INFO: Microblog startup [in /home/ola/Documents/moringa-school-projects/microblog/app/__init__.py:46]
-2018-04-15 21:51:25,242 INFO: Microblog startup [in /home/ola/Documents/moringa-school-projects/microblog/app/__init__.py:46]
-2018-04-16 06:20:37,353 INFO: Microblog startup [in /home/ola/Documents/moringa-school-projects/microblog/app/__init__.py:46]
-2018-04-16 06:36:16,069 INFO: Microblog startup [in /home/ola/Documents/moringa-school-projects/microblog/app/__init__.py:46]
-2018-04-16 06:53:55,845 INFO: Microblog startup [in /home/ola/Documents/moringa-school-projects/microblog/app/__init__.py:46]
-2018-04-16 06:59:30,007 INFO: Microblog startup [in /home/ola/Documents/moringa-school-projects/microblog/app/__init__.py:46]
-2018-04-16 07:07:49,516 INFO: Microblog startup [in /home/ola/Documents/moringa-school-projects/microblog/app/__init__.py:48]
-2018-04-16 08:27:26,118 INFO: Microblog startup [in /home/ola/Documents/moringa-school-projects/microblog/app/__init__.py:49]
-2018-04-16 11:33:57,859 INFO: Microblog startup [in /home/ola/Documents/moringa-school-projects/microblog/app/__init__.py:49]
-2018-04-17 10:12:52,433 INFO: Microblog startup [in /home/ola/Documents/moringa-school-projects/microblog/app/__init__.py:49]
-2018-04-17 12:10:24,396 INFO: Microblog startup [in /home/ola/Documents/moringa-school-projects/microblog/app/__init__.py:49]
-2018-04-19 09:45:20,214 INFO: Microblog startup [in /home/ola/Documents/moringa-school-projects/microblog/app/__init__.py:49]
-2018-04-19 10:05:15,387 INFO: Microblog startup [in /home/ola/Documents/moringa-school-projects/microblog/app/__init__.py:49]
-2018-04-19 12:29:33,374 INFO: Microblog startup [in /home/ola/Documents/moringa-school-projects/microblog/app/__init__.py:49]
-2018-04-19 12:31:05,163 INFO: Microblog startup [in /home/ola/Documents/moringa-school-projects/microblog/app/__init__.py:49]
-2018-04-19 12:53:05,122 INFO: Microblog startup [in /home/ola/Documents/moringa-school-projects/microblog/app/__init__.py:49]
-2018-04-19 13:00:52,175 INFO: Microblog startup [in /home/ola/Documents/moringa-school-projects/microblog/app/__init__.py:49]
-2018-04-19 14:53:59,941 INFO: Microblog startup [in /home/ola/Documents/moringa-school-projects/microblog/app/__init__.py:49]
-2018-04-19 16:11:30,459 INFO: Microblog startup [in /home/ola/Documents/moringa-school-projects/microblog/app/__init__.py:51]
+  File "/home/ola/Documents/moringa-school-projects/microblog/app/main/routes.py", line 31, in index
+    page,app.config['POSTS_PER_PAGE'],False)
+NameError: name 'app' is not defined
+2018-04-20 16:46:14,094 ERROR: Exception on /robots.txt [GET] [in /home/ola/Documents/moringa-school-projects/microblog/venv/lib/python3.6/site-packages/flask/app.py:1560]
+Traceback (most recent call last):
+  File "/home/ola/Documents/moringa-school-projects/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/ola/Documents/moringa-school-projects/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1590, in dispatch_request
+    self.raise_routing_exception(req)
+  File "/home/ola/Documents/moringa-school-projects/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1573, in raise_routing_exception
+    raise request.routing_exception
+  File "/home/ola/Documents/moringa-school-projects/microblog/venv/lib/python3.6/site-packages/flask/ctx.py", line 294, in match_request
+    self.url_adapter.match(return_rule=True)
+  File "/home/ola/Documents/moringa-school-projects/microblog/venv/lib/python3.6/site-packages/werkzeug/routing.py", line 1581, in match
+    raise NotFound()
+werkzeug.exceptions.NotFound: 404 Not Found: The requested URL was not found on the server.  If you entered the URL manually please check your spelling and try again.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/ola/Documents/moringa-school-projects/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/ola/Documents/moringa-school-projects/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/ola/Documents/moringa-school-projects/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1512, in handle_user_exception
+    return self.handle_http_exception(e)
+  File "/home/ola/Documents/moringa-school-projects/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1471, in handle_http_exception
+    return handler(e)
+  File "/home/ola/Documents/moringa-school-projects/microblog/app/errors/handlers.py", line 7, in not_found_error
+    return render_template('404.html'),404
+  File "/home/ola/Documents/moringa-school-projects/microblog/venv/lib/python3.6/site-packages/flask/templating.py", line 133, in render_template
+    return _render(ctx.app.jinja_env.get_or_select_template(template_name_or_list),
+  File "/home/ola/Documents/moringa-school-projects/microblog/venv/lib/python3.6/site-packages/jinja2/environment.py", line 869, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "/home/ola/Documents/moringa-school-projects/microblog/venv/lib/python3.6/site-packages/jinja2/environment.py", line 830, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "/home/ola/Documents/moringa-school-projects/microblog/venv/lib/python3.6/site-packages/jinja2/environment.py", line 804, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "/home/ola/Documents/moringa-school-projects/microblog/venv/lib/python3.6/site-packages/jinja2/loaders.py", line 113, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "/home/ola/Documents/moringa-school-projects/microblog/venv/lib/python3.6/site-packages/flask/templating.py", line 57, in get_source
+    return self._get_source_fast(environment, template)
+  File "/home/ola/Documents/moringa-school-projects/microblog/venv/lib/python3.6/site-packages/flask/templating.py", line 85, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: 404.html
