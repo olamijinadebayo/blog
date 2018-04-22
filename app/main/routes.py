@@ -2,7 +2,7 @@ from flask import render_template,flash,redirect,url_for,request,current_app
 from app import  db
 from app.main.forms import EditProfileForm,PostForm
 from flask_login import current_user,login_user,logout_user,login_required
-from app.models import User,followers,Post
+from app.models import User,Post
 from werkzeug.urls import url_parse
 from datetime import datetime
 # from app.email import send_password_reset_email
@@ -29,8 +29,8 @@ def index():
         flash('Your post is now live!')
         return redirect(url_for('main.index'))
     page = request.args.get('page',1,type=int)
-    posts = current_user.followed_posts().paginate(
-    page,current_app.config['POSTS_PER_PAGE'],False)
+    posts = Post.query.order_by(Post.timestamp.desc()).paginate(
+        page, current_app.config['POSTS_PER_PAGE'], False)
     next_url = url_for('main.index', page=posts.next_num) \
         if posts.has_next else None
     prev_url = url_for('main.index', page=posts.prev_num) \
