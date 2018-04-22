@@ -58,5 +58,15 @@ class Post(db.Model):
     def __repr__(self):
         return '<Post {}>'.format(self.body)
 
+class Comment(db.Model):
+    id = db.Column(db.Integer, primary_key = True)
+    comment_body = db.Column(db.String)
+    timestamp = db.Column(db.DateTime, index= True, default =datetime.utcnow)
+    post_id = db.Column(db.Integer, db.ForeignKey("post.id") )
+    user_id = db.Column(db.Integer, db.ForeignKey("user.id") )
+    def __repr__(self):
+        return '<Comment {}>'.format(self.body)
+
 admin.add_view(ModelView(User,db.session))
 admin.add_view(ModelView(Post,db.session))
+admin.add_view(ModelView(Comment,db.session))

@@ -2,7 +2,7 @@ from flask import render_template,flash,redirect,url_for,request,current_app
 from app import  db
 from app.main.forms import EditProfileForm,PostForm
 from flask_login import current_user,login_user,logout_user,login_required
-from app.models import User,Post
+from app.models import User,Post,Comment
 from werkzeug.urls import url_parse
 from datetime import datetime
 # from app.email import send_password_reset_email
@@ -110,3 +110,17 @@ def explore():
         if posts.has_prev else None
     return render_template('index.html', title='Explore',
      posts=posts.items,next_url=next_url,prev_url=prev_url)
+
+@bp.route('/post/comment/<int:id>', methods=['GET','POST'])
+@login_required
+def comment(id):
+    posts = Post.query.filter_by(id=id).first()
+    form = CommentForm()
+
+    if form.validate_on_submit():
+        comment = Comment( comment_body=comment_body.form.data, posts=posts, author=current_user)
+        db.session.add(comment)
+        db.session.commit()
+        flash('your comment has been added')
+        return redirect(url_for('main.index', id=post.id ))
+    return render_template('index.html', title='Comments', form=form)
