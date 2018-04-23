@@ -1,5 +1,5 @@
 from flask import render_template,flash,redirect,url_for,request,current_app
-from app import  db
+from app import  db,basic_auth
 from app.main.forms import EditProfileForm,PostForm,CommentForm
 from flask_login import current_user,login_user,logout_user,login_required
 from app.models import User,Post,Comment
@@ -18,12 +18,12 @@ def before_request():
 @bp.route('/',methods=['GET', 'POST'])
 @bp.route('/index',methods=['GET', 'POST'])
 @login_required
+@basic_auth.required
 def index():
     form = PostForm()
     if form.validate_on_submit():
 
-        post = Post(body=form.post.data, author=current_user)
-        # db.session.add(title)
+        post = Post(title=form.title.data,body=form.post.data, author=current_user)
         db.session.add(post)
         db.session.commit()
         flash('Your post is now live!')
@@ -35,7 +35,7 @@ def index():
         if posts.has_next else None
     prev_url = url_for('main.index', page=posts.prev_num) \
          if posts.has_prev else None
-    return render_template('index.html', title ='Home',posts=posts.items,
+    return render_template('index.html', title ='title',posts=posts.items,
         form = form,next_url=next_url,prev_url=prev_url)
 
 

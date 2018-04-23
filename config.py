@@ -14,4 +14,6 @@ class Config(object):
     ADMINS = ['consultolamijin@gmail.com']
     POSTS_PER_PAGE = 25
     LANGUAGES = ['en','sw']
+    BASIC_AUTH_USERNAME = 'olamijin'
+    BASIC_AUTH_PASSWORD = '1234abcdola'
     LOG_TO_STDOUT = os.environ.get('LOG_TO_STDOUT')
