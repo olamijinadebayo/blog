@@ -22,3 +22,15 @@ class Config(object):
     BASIC_AUTH_USERNAME = 'olamijin'
     BASIC_AUTH_PASSWORD = '1234abcdola'
     LOG_TO_STDOUT = os.environ.get('LOG_TO_STDOUT')
+    
+class ProdConfig(Config):
+    pass
+
+
+class DevConfig(Config):
+    DEBUG = True
+
+config_options = {
+'development':DevConfig,
+'production':ProdConfig
+}
