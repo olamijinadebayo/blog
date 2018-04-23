@@ -1,4 +1,4 @@
-2018-04-20 16:43:48,704 ERROR: Exception on /index [GET] [in /home/ola/Documents/moringa-school-projects/microblog/venv/lib/python3.6/site-packages/flask/app.py:1560]
+2018-04-20 16:46:14,091 ERROR: Exception on / [GET] [in /home/ola/Documents/moringa-school-projects/microblog/venv/lib/python3.6/site-packages/flask/app.py:1560]
 Traceback (most recent call last):
   File "/home/ola/Documents/moringa-school-projects/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1982, in wsgi_app
     response = self.full_dispatch_request()
@@ -17,7 +17,7 @@ Traceback (most recent call last):
   File "/home/ola/Documents/moringa-school-projects/microblog/app/main/routes.py", line 31, in index
     page,app.config['POSTS_PER_PAGE'],False)
 NameError: name 'app' is not defined
-2018-04-20 16:43:48,708 ERROR: Exception on /robots.txt [GET] [in /home/ola/Documents/moringa-school-projects/microblog/venv/lib/python3.6/site-packages/flask/app.py:1560]
+2018-04-20 16:46:14,094 ERROR: Exception on /robots.txt [GET] [in /home/ola/Documents/moringa-school-projects/microblog/venv/lib/python3.6/site-packages/flask/app.py:1560]
 Traceback (most recent call last):
   File "/home/ola/Documents/moringa-school-projects/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1612, in full_dispatch_request
     rv = self.dispatch_request()
@@ -59,22 +59,11 @@ Traceback (most recent call last):
   File "/home/ola/Documents/moringa-school-projects/microblog/venv/lib/python3.6/site-packages/flask/templating.py", line 85, in _get_source_fast
     raise TemplateNotFound(template)
 jinja2.exceptions.TemplateNotFound: 404.html
-2018-04-20 16:44:02,252 ERROR: Exception on /index [GET] [in /home/ola/Documents/moringa-school-projects/microblog/venv/lib/python3.6/site-packages/flask/app.py:1560]
-Traceback (most recent call last):
-  File "/home/ola/Documents/moringa-school-projects/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1982, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/home/ola/Documents/moringa-school-projects/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1614, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "/home/ola/Documents/moringa-school-projects/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1517, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "/home/ola/Documents/moringa-school-projects/microblog/venv/lib/python3.6/site-packages/flask/_compat.py", line 33, in reraise
-    raise value
-  File "/home/ola/Documents/moringa-school-projects/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1612, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/home/ola/Documents/moringa-school-projects/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1598, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "/home/ola/Documents/moringa-school-projects/microblog/venv/lib/python3.6/site-packages/flask_login/utils.py", line 261, in decorated_view
-    return func(*args, **kwargs)
-  File "/home/ola/Documents/moringa-school-projects/microblog/app/main/routes.py", line 31, in index
-    page,app.config['POSTS_PER_PAGE'],False)
-NameError: name 'app' is not defined
+2018-04-22 21:00:23,447 INFO: Microblog startup [in /home/ola/Documents/moringa-school-projects/microblog/app/__init__.py:70]
+2018-04-22 21:06:45,537 INFO: Microblog startup [in /home/ola/Documents/moringa-school-projects/microblog/app/__init__.py:73]
+2018-04-23 01:51:11,058 INFO: Microblog startup [in /home/ola/Documents/moringa-school-projects/microblog/app/__init__.py:73]
+2018-04-23 01:51:52,559 INFO: Microblog startup [in /home/ola/Documents/moringa-school-projects/microblog/app/__init__.py:73]
+2018-04-23 01:52:08,027 INFO: Microblog startup [in /home/ola/Documents/moringa-school-projects/microblog/app/__init__.py:73]
+2018-04-23 01:54:06,971 INFO: Microblog startup [in /home/ola/Documents/moringa-school-projects/microblog/app/__init__.py:73]
+2018-04-23 02:47:39,623 INFO: Microblog startup [in /home/ola/Documents/moringa-school-projects/microblog/app/__init__.py:81]
+2018-04-23 02:48:17,960 INFO: Microblog startup [in /home/ola/Documents/moringa-school-projects/microblog/app/__init__.py:81]

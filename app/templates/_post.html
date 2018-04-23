@@ -9,9 +9,12 @@
                <a href="{{ url_for('main.user', username=post.author.username) }}">
                    {{ post.author.username }}
                </a>
-               said{{  moment(post.timestamp).fromNow() }}:
+               said{{ moment(post.timestamp).fromNow() }}:
                <br>
-               {{ post.body }}
+               <a href="{{url_for('main.fullpost',id=post.id)}}">{{ post.body |truncate (10)}}</a>
+           </td>
+           <td>
+              <a href="{{url_for('main.fullpost',id=post.id)}}"><button class="btn btn-info">Click here to read full article</button></a>
            </td>
        </tr>
    </table>

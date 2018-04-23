@@ -1,46 +1,4 @@
-2018-04-20 16:44:38,269 ERROR: Exception on /robots.txt [GET] [in /home/ola/Documents/moringa-school-projects/microblog/venv/lib/python3.6/site-packages/flask/app.py:1560]
-Traceback (most recent call last):
-  File "/home/ola/Documents/moringa-school-projects/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1612, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/home/ola/Documents/moringa-school-projects/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1590, in dispatch_request
-    self.raise_routing_exception(req)
-  File "/home/ola/Documents/moringa-school-projects/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1573, in raise_routing_exception
-    raise request.routing_exception
-  File "/home/ola/Documents/moringa-school-projects/microblog/venv/lib/python3.6/site-packages/flask/ctx.py", line 294, in match_request
-    self.url_adapter.match(return_rule=True)
-  File "/home/ola/Documents/moringa-school-projects/microblog/venv/lib/python3.6/site-packages/werkzeug/routing.py", line 1581, in match
-    raise NotFound()
-werkzeug.exceptions.NotFound: 404 Not Found: The requested URL was not found on the server.  If you entered the URL manually please check your spelling and try again.
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/home/ola/Documents/moringa-school-projects/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1982, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/home/ola/Documents/moringa-school-projects/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1614, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "/home/ola/Documents/moringa-school-projects/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1512, in handle_user_exception
-    return self.handle_http_exception(e)
-  File "/home/ola/Documents/moringa-school-projects/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1471, in handle_http_exception
-    return handler(e)
-  File "/home/ola/Documents/moringa-school-projects/microblog/app/errors/handlers.py", line 7, in not_found_error
-    return render_template('404.html'),404
-  File "/home/ola/Documents/moringa-school-projects/microblog/venv/lib/python3.6/site-packages/flask/templating.py", line 133, in render_template
-    return _render(ctx.app.jinja_env.get_or_select_template(template_name_or_list),
-  File "/home/ola/Documents/moringa-school-projects/microblog/venv/lib/python3.6/site-packages/jinja2/environment.py", line 869, in get_or_select_template
-    return self.get_template(template_name_or_list, parent, globals)
-  File "/home/ola/Documents/moringa-school-projects/microblog/venv/lib/python3.6/site-packages/jinja2/environment.py", line 830, in get_template
-    return self._load_template(name, self.make_globals(globals))
-  File "/home/ola/Documents/moringa-school-projects/microblog/venv/lib/python3.6/site-packages/jinja2/environment.py", line 804, in _load_template
-    template = self.loader.load(self, name, globals)
-  File "/home/ola/Documents/moringa-school-projects/microblog/venv/lib/python3.6/site-packages/jinja2/loaders.py", line 113, in load
-    source, filename, uptodate = self.get_source(environment, name)
-  File "/home/ola/Documents/moringa-school-projects/microblog/venv/lib/python3.6/site-packages/flask/templating.py", line 57, in get_source
-    return self._get_source_fast(environment, template)
-  File "/home/ola/Documents/moringa-school-projects/microblog/venv/lib/python3.6/site-packages/flask/templating.py", line 85, in _get_source_fast
-    raise TemplateNotFound(template)
-jinja2.exceptions.TemplateNotFound: 404.html
-2018-04-20 16:45:38,389 ERROR: Exception on / [GET] [in /home/ola/Documents/moringa-school-projects/microblog/venv/lib/python3.6/site-packages/flask/app.py:1560]
+2018-04-23 09:44:33,932 ERROR: Exception on /index [GET] [in /home/ola/Documents/moringa-school-projects/microblog/venv/lib/python3.6/site-packages/flask/app.py:1560]
 Traceback (most recent call last):
   File "/home/ola/Documents/moringa-school-projects/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1982, in wsgi_app
     response = self.full_dispatch_request()
@@ -56,48 +14,94 @@ Traceback (most recent call last):
     return self.view_functions[rule.endpoint](**req.view_args)
   File "/home/ola/Documents/moringa-school-projects/microblog/venv/lib/python3.6/site-packages/flask_login/utils.py", line 261, in decorated_view
     return func(*args, **kwargs)
-  File "/home/ola/Documents/moringa-school-projects/microblog/app/main/routes.py", line 31, in index
-    page,app.config['POSTS_PER_PAGE'],False)
-NameError: name 'app' is not defined
-2018-04-20 16:45:38,393 ERROR: Exception on /robots.txt [GET] [in /home/ola/Documents/moringa-school-projects/microblog/venv/lib/python3.6/site-packages/flask/app.py:1560]
-Traceback (most recent call last):
-  File "/home/ola/Documents/moringa-school-projects/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1612, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/home/ola/Documents/moringa-school-projects/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1590, in dispatch_request
-    self.raise_routing_exception(req)
-  File "/home/ola/Documents/moringa-school-projects/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1573, in raise_routing_exception
-    raise request.routing_exception
-  File "/home/ola/Documents/moringa-school-projects/microblog/venv/lib/python3.6/site-packages/flask/ctx.py", line 294, in match_request
-    self.url_adapter.match(return_rule=True)
-  File "/home/ola/Documents/moringa-school-projects/microblog/venv/lib/python3.6/site-packages/werkzeug/routing.py", line 1581, in match
-    raise NotFound()
-werkzeug.exceptions.NotFound: 404 Not Found: The requested URL was not found on the server.  If you entered the URL manually please check your spelling and try again.
-
-During handling of the above exception, another exception occurred:
-
+  File "/home/ola/Documents/moringa-school-projects/microblog/app/main/routes.py", line 39, in index
+    form = form,next_url=next_url,prev_url=prev_url)
+  File "/home/ola/Documents/moringa-school-projects/microblog/venv/lib/python3.6/site-packages/flask/templating.py", line 134, in render_template
+    context, ctx.app)
+  File "/home/ola/Documents/moringa-school-projects/microblog/venv/lib/python3.6/site-packages/flask/templating.py", line 116, in _render
+    rv = template.render(context)
+  File "/home/ola/Documents/moringa-school-projects/microblog/venv/lib/python3.6/site-packages/jinja2/asyncsupport.py", line 76, in render
+    return original_render(self, *args, **kwargs)
+  File "/home/ola/Documents/moringa-school-projects/microblog/venv/lib/python3.6/site-packages/jinja2/environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "/home/ola/Documents/moringa-school-projects/microblog/venv/lib/python3.6/site-packages/jinja2/environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/ola/Documents/moringa-school-projects/microblog/venv/lib/python3.6/site-packages/jinja2/_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "/home/ola/Documents/moringa-school-projects/microblog/app/templates/_post.html", line 15, in template
+    {{ post.body | truncate 10 }}
+  File "/home/ola/Documents/moringa-school-projects/microblog/venv/lib/python3.6/site-packages/jinja2/environment.py", line 1005, in render
+    return concat(self.root_render_func(self.new_context(vars)))
+  File "/home/ola/Documents/moringa-school-projects/microblog/app/templates/index.html", line 39, in top-level template code
+    <li class="next{% if not next_url %} disabled{% endif %}">
+  File "/home/ola/Documents/moringa-school-projects/microblog/app/templates/base.html", line 1, in top-level template code
+    {% extends 'bootstrap/base.html' %}
+  File "/home/ola/Documents/moringa-school-projects/microblog/venv/lib/python3.6/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 1, in top-level template code
+    {% block doc -%}
+  File "/home/ola/Documents/moringa-school-projects/microblog/venv/lib/python3.6/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 4, in block "doc"
+    {%- block html %}
+  File "/home/ola/Documents/moringa-school-projects/microblog/venv/lib/python3.6/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 20, in block "html"
+    {% block body -%}
+  File "/home/ola/Documents/moringa-school-projects/microblog/venv/lib/python3.6/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 23, in block "body"
+    {% block content -%}
+  File "/home/ola/Documents/moringa-school-projects/microblog/app/templates/base.html", line 52, in block "content"
+    {% block app_content %}{% endblock %}
+  File "/home/ola/Documents/moringa-school-projects/microblog/app/templates/index.html", line 21, in block "app_content"
+    {% include '_post.html'%}
+  File "/home/ola/Documents/moringa-school-projects/microblog/venv/lib/python3.6/site-packages/jinja2/environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/ola/Documents/moringa-school-projects/microblog/venv/lib/python3.6/site-packages/jinja2/_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "/home/ola/Documents/moringa-school-projects/microblog/app/templates/_post.html", line 15, in template
+    {{ post.body | truncate 10 }}
+  File "/home/ola/Documents/moringa-school-projects/microblog/venv/lib/python3.6/site-packages/jinja2/environment.py", line 497, in _parse
+    return Parser(self, source, name, encode_filename(filename)).parse()
+  File "/home/ola/Documents/moringa-school-projects/microblog/venv/lib/python3.6/site-packages/jinja2/parser.py", line 901, in parse
+    result = nodes.Template(self.subparse(), lineno=1)
+  File "/home/ola/Documents/moringa-school-projects/microblog/venv/lib/python3.6/site-packages/jinja2/parser.py", line 876, in subparse
+    self.stream.expect('variable_end')
+  File "/home/ola/Documents/moringa-school-projects/microblog/venv/lib/python3.6/site-packages/jinja2/lexer.py", line 384, in expect
+    self.name, self.filename)
+jinja2.exceptions.TemplateSyntaxError: expected token 'end of print statement', got 'integer'
+2018-04-23 09:47:55,186 INFO: Microblog startup [in /home/ola/Documents/moringa-school-projects/microblog/app/__init__.py:81]
+2018-04-23 09:49:26,201 ERROR: Exception on /index [POST] [in /home/ola/Documents/moringa-school-projects/microblog/venv/lib/python3.6/site-packages/flask/app.py:1560]
 Traceback (most recent call last):
   File "/home/ola/Documents/moringa-school-projects/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1982, in wsgi_app
     response = self.full_dispatch_request()
   File "/home/ola/Documents/moringa-school-projects/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1614, in full_dispatch_request
     rv = self.handle_user_exception(e)
-  File "/home/ola/Documents/moringa-school-projects/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1512, in handle_user_exception
-    return self.handle_http_exception(e)
-  File "/home/ola/Documents/moringa-school-projects/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1471, in handle_http_exception
-    return handler(e)
-  File "/home/ola/Documents/moringa-school-projects/microblog/app/errors/handlers.py", line 7, in not_found_error
-    return render_template('404.html'),404
-  File "/home/ola/Documents/moringa-school-projects/microblog/venv/lib/python3.6/site-packages/flask/templating.py", line 133, in render_template
-    return _render(ctx.app.jinja_env.get_or_select_template(template_name_or_list),
-  File "/home/ola/Documents/moringa-school-projects/microblog/venv/lib/python3.6/site-packages/jinja2/environment.py", line 869, in get_or_select_template
-    return self.get_template(template_name_or_list, parent, globals)
-  File "/home/ola/Documents/moringa-school-projects/microblog/venv/lib/python3.6/site-packages/jinja2/environment.py", line 830, in get_template
-    return self._load_template(name, self.make_globals(globals))
-  File "/home/ola/Documents/moringa-school-projects/microblog/venv/lib/python3.6/site-packages/jinja2/environment.py", line 804, in _load_template
-    template = self.loader.load(self, name, globals)
-  File "/home/ola/Documents/moringa-school-projects/microblog/venv/lib/python3.6/site-packages/jinja2/loaders.py", line 113, in load
-    source, filename, uptodate = self.get_source(environment, name)
-  File "/home/ola/Documents/moringa-school-projects/microblog/venv/lib/python3.6/site-packages/flask/templating.py", line 57, in get_source
-    return self._get_source_fast(environment, template)
-  File "/home/ola/Documents/moringa-school-projects/microblog/venv/lib/python3.6/site-packages/flask/templating.py", line 85, in _get_source_fast
-    raise TemplateNotFound(template)
-jinja2.exceptions.TemplateNotFound: 404.html
+  File "/home/ola/Documents/moringa-school-projects/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/ola/Documents/moringa-school-projects/microblog/venv/lib/python3.6/site-packages/flask/_compat.py", line 33, in reraise
+    raise value
+  File "/home/ola/Documents/moringa-school-projects/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/ola/Documents/moringa-school-projects/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/ola/Documents/moringa-school-projects/microblog/venv/lib/python3.6/site-packages/flask_login/utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "/home/ola/Documents/moringa-school-projects/microblog/app/main/routes.py", line 23, in index
+    if form.validate_on_submit():
+  File "/home/ola/Documents/moringa-school-projects/microblog/venv/lib/python3.6/site-packages/flask_wtf/form.py", line 101, in validate_on_submit
+    return self.is_submitted() and self.validate()
+  File "/home/ola/Documents/moringa-school-projects/microblog/venv/lib/python3.6/site-packages/wtforms/form.py", line 310, in validate
+    return super(Form, self).validate(extra)
+  File "/home/ola/Documents/moringa-school-projects/microblog/venv/lib/python3.6/site-packages/wtforms/form.py", line 152, in validate
+    if not field.validate(self, extra):
+  File "/home/ola/Documents/moringa-school-projects/microblog/venv/lib/python3.6/site-packages/wtforms/fields/core.py", line 204, in validate
+    stop_validation = self._run_validation_chain(form, chain)
+  File "/home/ola/Documents/moringa-school-projects/microblog/venv/lib/python3.6/site-packages/wtforms/fields/core.py", line 224, in _run_validation_chain
+    validator(form, self)
+  File "/home/ola/Documents/moringa-school-projects/microblog/venv/lib/python3.6/site-packages/wtforms/validators.py", line 103, in __call__
+    message = field.gettext('Field must be between %(min)d and %(max)d characters long.')
+  File "/home/ola/Documents/moringa-school-projects/microblog/venv/lib/python3.6/site-packages/wtforms/fields/core.py", line 164, in gettext
+    return self._translations.gettext(string)
+  File "/home/ola/Documents/moringa-school-projects/microblog/venv/lib/python3.6/site-packages/flask_wtf/i18n.py", line 48, in gettext
+    t = _get_translations()
+  File "/home/ola/Documents/moringa-school-projects/microblog/venv/lib/python3.6/site-packages/flask_wtf/i18n.py", line 40, in _get_translations
+    dirname, [get_locale()], domain='wtforms'
+  File "/home/ola/Documents/moringa-school-projects/microblog/venv/lib/python3.6/site-packages/flask_babel/__init__.py", line 257, in get_locale
+    rv = babel.locale_selector_func()
+  File "/home/ola/Documents/moringa-school-projects/microblog/app/__init__.py", line 87, in get_locale
+    return request.accept_languages.best_match(app.config['LANGUAGES'])
+NameError: name 'app' is not defined

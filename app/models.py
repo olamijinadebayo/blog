@@ -65,7 +65,7 @@ class Comment(db.Model):
     post_id = db.Column(db.Integer, db.ForeignKey("post.id") )
     user_id = db.Column(db.Integer, db.ForeignKey("user.id") )
     def __repr__(self):
-        return '<Comment {}>'.format(self.body)
+        return '<Comment {}>'.format(self.comment_body)
 
 admin.add_view(ModelView(User,db.session))
 admin.add_view(ModelView(Post,db.session))

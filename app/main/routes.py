@@ -1,6 +1,6 @@
 from flask import render_template,flash,redirect,url_for,request,current_app
 from app import  db
-from app.main.forms import EditProfileForm,PostForm
+from app.main.forms import EditProfileForm,PostForm,CommentForm
 from flask_login import current_user,login_user,logout_user,login_required
 from app.models import User,Post,Comment
 from werkzeug.urls import url_parse
@@ -23,7 +23,7 @@ def index():
     if form.validate_on_submit():
 
         post = Post(body=form.post.data, author=current_user)
-        db.session.add(title)
+        # db.session.add(title)
         db.session.add(post)
         db.session.commit()
         flash('Your post is now live!')
@@ -124,3 +124,20 @@ def comment(id):
         flash('your comment has been added')
         return redirect(url_for('main.index', id=post.id ))
     return render_template('index.html', title='Comments', form=form)
+
+@bp.route('/post/<id>', methods=['POST','GET'])
+def fullpost(id):
+   title= f'Posts'
+   post = Post.query.filter_by(id=id).first()
+   comment  = CommentForm()
+   if comment.validate_on_submit():
+       comment = Comment(comment_body = comment.comment_body.data, post_id=id)
+       db.session.add(comment)
+       db.session.commit()
+       print(comment)
+       return redirect(url_for('main.fullpost', id=post.id))
+   allcomments = Comment.query.all()
+   postcomments = Comment.query.filter_by(post_id=id).all()
+
+
+   return render_template('fullpost.html', title=title, post=post, comment=comment, allcomments=allcomments ,postcomments=postcomments)

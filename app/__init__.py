@@ -44,7 +44,7 @@ def create_app(config_class=Config):
     from app.main import bp as main_bp
     app.register_blueprint(main_bp)
 
-    
+
     if not app.debug and not app.testing:
         if app.config['MAIL_SERVER']:
             auth = None
@@ -82,8 +82,8 @@ def create_app(config_class=Config):
 
     return app
 
-@babel.localeselector
-def get_locale():
-    return request.accept_languages.best_match(app.config['LANGUAGES'])
+# @babel.localeselector
+# def get_locale():
+#     return request.accept_languages.best_match(app.config['LANGUAGES'])
 
 from app import models
