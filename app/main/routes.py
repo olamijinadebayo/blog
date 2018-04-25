@@ -16,10 +16,23 @@ def before_request():
         db.session.commit()
 
 @bp.route('/',methods=['GET', 'POST'])
-@bp.route('/index',methods=['GET', 'POST'])
+@bp.route('/index')
+@login_required
+def index():
+    page = request.args.get('page', 1, type=int)
+    posts = Post.query.order_by(Post.timestamp.desc()).paginate(
+        page, current_app.config['POSTS_PER_PAGE'], False)
+    next_url = url_for('main.index', page=posts.next_num) \
+        if posts.has_next else None
+    prev_url = url_for('main.index', page=posts.prev_num) \
+        if posts.has_prev else None
+    return render_template('index.html', title='Explore',
+     posts=posts.items,next_url=next_url,prev_url=prev_url)
+
+@bp.route('/writer',methods=['GET', 'POST'])
 @login_required
 @basic_auth.required
-def index():
+def writer():
     form = PostForm()
     if form.validate_on_submit():
 
@@ -31,13 +44,12 @@ def index():
     page = request.args.get('page',1,type=int)
     posts = Post.query.order_by(Post.timestamp.desc()).paginate(
         page, current_app.config['POSTS_PER_PAGE'], False)
-    next_url = url_for('main.index', page=posts.next_num) \
+    next_url = url_for('main.writer', page=posts.next_num) \
         if posts.has_next else None
-    prev_url = url_for('main.index', page=posts.prev_num) \
+    prev_url = url_for('main.writer', page=posts.prev_num) \
          if posts.has_prev else None
     return render_template('index.html', title ='title',posts=posts.items,
         form = form,next_url=next_url,prev_url=prev_url)
-
 
 @bp.route('/user/<username>')
 @login_required
@@ -97,19 +109,6 @@ def unfollow(username):
     db.session.commit()
     flash('You are not following {}.'.format(username))
     return redirect(url_for('main.user', username=username))
-
-@bp.route('/explore')
-@login_required
-def explore():
-    page = request.args.get('page', 1, type=int)
-    posts = Post.query.order_by(Post.timestamp.desc()).paginate(
-        page, current_app.config['POSTS_PER_PAGE'], False)
-    next_url = url_for('main.explore', page=posts.next_num) \
-        if posts.has_next else None
-    prev_url = url_for('main.explore', page=posts.prev_num) \
-        if posts.has_prev else None
-    return render_template('index.html', title='Explore',
-     posts=posts.items,next_url=next_url,prev_url=prev_url)
 
 @bp.route('/post/comment/<int:id>', methods=['GET','POST'])
 @login_required

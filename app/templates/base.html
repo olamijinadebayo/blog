@@ -3,7 +3,7 @@
     {% if title %}
       {{title}} - Blog
     {% else %}
-      Welcome to Microblog
+      Welcome to the best blog ever
     {% endif %}
   {% endblock %}
 
@@ -21,8 +21,7 @@
             </div>
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
-                    <li><a href="{{ url_for('main.index') }}">Writer</a></li>
-                    <li><a href="{{ url_for('main.explore') }}">Posts</a></li>
+                    <li><a href="{{ url_for('main.writer') }}">Writer</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     {% if current_user.is_anonymous %}
