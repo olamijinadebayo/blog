@@ -10,6 +10,7 @@ It allows users to:
 * view the blog posts entered by the writer
 * Comment on blog posts submitted by the writer.
 * View the most recent posts.
+* It allows a writer to submit posts by accessing the writers page on the navbar only if the have access to  the username and password.
 
 
 The application allows the writer to:
@@ -36,8 +37,9 @@ The following are needed for the application to run on a local computer:
 * From the terminal,create a virtual environment and name it venv
 * Switch to the virtual environment by entering  ```source venv/bin/activate``` from the terminal.
 * Run ```pip install -r requirements.txt``` to install all the extension required.
-* To run the application using the flask cli,```export FLASK_APP=microblog.py``` ,then type ```flask run``` to run the application
+* To run the application using the flask cli,```export FLASK_APP=blog.py``` ,then type ```flask run``` to run the application
 * Once inside the application, a user will only be able to view the blogs posted and comment on them.
+* To access the writer page in the application you will be required to enter a username which is set to "olamijin" and a password which i have also set as "1234abcdola"
 
 ## License
 

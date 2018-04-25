@@ -45,3 +45,6 @@ NameError: name 'title' is not defined
 2018-04-25 10:46:33,859 INFO: Microblog startup [in /home/ola/Documents/moringa-school-projects/microblog/app/__init__.py:84]
 2018-04-25 10:50:04,156 INFO: Microblog startup [in /home/ola/Documents/moringa-school-projects/microblog/app/__init__.py:84]
 2018-04-25 10:51:39,241 INFO: Microblog startup [in /home/ola/Documents/moringa-school-projects/microblog/app/__init__.py:84]
+2018-04-25 10:59:17,273 INFO: Microblog startup [in /home/ola/Documents/moringa-school-projects/microblog/app/__init__.py:84]
+2018-04-25 11:13:07,796 INFO: Microblog startup [in /home/ola/Documents/moringa-school-projects/microblog/app/__init__.py:84]
+2018-04-25 11:18:00,178 INFO: Microblog startup [in /home/ola/Documents/moringa-school-projects/microblog/app/__init__.py:84]
